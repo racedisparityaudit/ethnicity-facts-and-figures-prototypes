@@ -1,0 +1,113 @@
+
+{% extends "layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "accordion/macro.njk" import govukAccordion %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Crime, justice and the law
+      </h1>
+
+      <h2 class="govuk-heading-m">Key findings</h2>
+      <p>Black people have lower levels of <a href="https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/confidence-in-the-local-police/latest">confidence in the police</a>, especially among younger Black adults.</p>
+
+      <p>While there has been a very large reduction in the <a href="https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/stop-and-search/latest">use of Stop and Search</a> among Black people since 2008/09, the use of these powers remains far higher on this ethnic group than others. Black men are also almost three and a half times <a href="https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/number-of-arrests/latest">more likely to be arrested</a> than White men.</p>
+
+      <p>Of all defendants, including juveniles, who <a href="https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/courts-sentencing-and-tribunals/remand-status-at-crown-court/latest">were remanded at Crown Court</a> for indictable offences, the proportion of defendants who were remanded in custody (rather than allowed out on bail) was highest for Black defendants, and particularly for Black males.</p>
+
+      <p>Among adults who were tried for indictable offences, the <a href="https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/courts-sentencing-and-tribunals/prosecutions-and-convictions/latest">percentage of prosecutions resulting in conviction</a> – known as the conviction ratio – was highest among White defendants at 87% in 2016, and lowest for Asians (81%); for Black defendants it was 82%. Across all ethnic groups the conviction ratio was lower for juveniles than adults. The lowest conviction ratio for juveniles was among Black defendants (69%); the conviction ratio for juveniles from all other ethnic groups ranged between 71% and 73%.</p>
+
+      <p>For all offenders, the <a href="https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/courts-sentencing-and-tribunals/average-length-of-custodial-sentences/latest">average custodial sentence length</a> has increased for all ethnic groups since 2009. White offenders consistently received the shortest sentence. In 2016, the average sentence length for White offenders was 18 months whereas Black and Asian offenders received the longest average sentences at 24 and 25 months respectively. These statistics do not take into account any other contextual factors such as the offences dealt with, which may differ by ethnic group.</p>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Explore further</h2>
+{{ govukAccordion({
+  id: "accordion-default",
+  items: [
+    {
+      heading: {
+        text: "Policing"
+      },
+      content: {
+        html: "<ul class=\"govuk-list\">
+<li><a href=\"#\">Confidence in the local police</a></li>
+<li><a href=\"#\">Youth cautions</a></li>
+<li><a href=\"#\">Arrests</a></li>
+<li><a href=\"#\">Stop and search</a></li>
+</ul>"
+      }
+    },
+    {
+      heading: {
+        text: "Crime and reoffending"
+      },
+      content: {
+        html: "<ul class=\"govuk-list\">
+<li><a href=\"#\">Victims of crime</a></li>
+<li><a href=\"#\">Fear of crime</a></li>
+<li><a href=\"#\">Proven reoffending</a></li>
+</ul>"
+      }
+    },
+      {
+      heading: {
+        text: "Courts, sentencing and tribunals"
+      },
+      content: {
+        html: "<ul class=\"govuk-list\">
+<li><a href=\"#\">Employment tribunal claims</a></li>
+<li><a href=\"#\">Prosecutions and convictions</a></li>
+<li><a href=\"#\">Remand status at Crown Court</a></li>
+<li><a href=\"#\">Sentences and custody</a></li>
+<li><a href=\"#\">Average length of custodial sentences</a></li>
+<li><a href=\"#\">Young people in custody</a></li>
+</ul>"
+      }
+    },
+      {
+      heading: {
+        text: "Prison and custody incidents"
+      },
+      content: {
+        html: "<ul class=\"govuk-list\">
+<li><a href=\"#\">Violence involving prisoners</a></li>
+<li><a href=\"#\">Self-inflicted deaths in prison custody</a></li>
+<li><a href=\"#\">Self-harm in prison custody</a></li>
+<li><a href=\"#\">Self-harm by young people in custody</a></li>
+<li><a href=\"#\">Use of force on young people in custody</a></li>
+<li><a href=\"#\">Single separation incidents for young people in custody</a></li>
+<li><a href=\"#\">Restrictive physical interventions involving young people in custody</a></li>
+<li><a href=\"#\">Assaults carried out by young people in custody</a></li>
+</ul>"
+      }
+    }
+  ]
+}) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
