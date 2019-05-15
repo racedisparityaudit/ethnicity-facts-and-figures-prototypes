@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      },
+      {
+        text: "Workforce and business",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Edit page</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="title">
+          Title
+        </label>
+        <input class="govuk-input" id="title" name="title" type="text" value="Stop and search">
+      </div>
+
+      <p class="govuk-body">[...]</p>
+
+      <h2 class="govuk-heading-l">Data sources</h2>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="primary-source">
+          Primary data source
+        </label>
+
+        {% if data['data-source-title'] %}
+          <p class="govuk-body govuk-!-margin-bottom-1"><b>{{ data['data-source-title'] }}</b></p>
+          <p class="govuk-body"><a href="/edit-data-source" class="govuk-link govuk-link--no-visited-state">Edit</a> <a style="margin-left: 30px;" href="/remove-data-source" class="govuk-link govuk-link--no-visited-state">Remove</a></p>
+        {% else %}
+          <div class="govuk-body"><a href="/add-data-source" class="govuk-link govuk-link--no-visited-state">Add primary data source</a></div>
+        {% endif %}
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="primary-source">
+          Secondary data source
+        </label>
+
+
+        <div class="govuk-body"><a href="/add-data-source" class="govuk-link govuk-link--no-visited-state">Add secondary data source</a></div>
+        </div>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+
+{% extends "layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "input/macro.njk" import govukInput %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      },
+      {
+        text: "Workforce and business",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "/measure-linked-to-data-sources"
+      }) }}
+
+      <span class="govuk-caption-xl">Stop and search</span>
+      <h1 class="govuk-heading-xl">Add data source</h1>
+
+
+      <form action="/data-sources">
+
+        {{ govukInput({
+          label: {
+            text: "Search term"
+          },
+          hint: {
+            text: "For example, ‘police’"
+          },
+          id: "q",
+          name: "q",
+          type: 'search',
+          autocomplete: 'off'
+        }) }}
+
+        {{ govukButton({
+          text: "Search"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

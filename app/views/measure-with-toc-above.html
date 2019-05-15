@@ -1,0 +1,173 @@
+
+{% extends "layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      },
+      {
+        text: "Workforce and business",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <style>
+    .eff-toc {}
+    .eff-toc li {display: table-row;}
+    .eff-toc li a {text-decoration: none;}
+    .eff-toc__number {display: table-cell; width: 24px;}
+    .eff-toc__content {display: table-cell; padding-bottom: 5px;}
+
+
+    .eff-summary-list--small { font-size: 16px; }
+
+    .eff-summary-list--small .govuk-summary-list__key,
+    .eff-summary-list--small .govuk-summary-list__value { padding-bottom: 0; padding-top: 0;}
+
+    .eff-summary-list--small .govuk-summary-list__key {
+      width: 150px;
+    }
+
+  </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div style="background-color: #005ea5;" class="govuk-!-padding-top-7 govuk-!-padding-left-5">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1" style="color: white;">
+          NHS basic pay
+        </h1>
+        <p style="color: white;" class="govuk-!-padding-bottom-5">Published 27 September 2018</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-!-font-size-16 govuk-!-margin-bottom-1 govuk-!-margin-top-5">Contents</p>
+      <ol class="govuk-list eff-toc">
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-1"><span class="eff-toc__number">1. </span><span class="eff-toc__content">Overview</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-2"><span class="eff-toc__number">2. </span><span class="eff-toc__content">By ethnicity and gender</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-3"><span class="eff-toc__number">3. </span><span class="eff-toc__content">Medical staff</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-4"><span class="eff-toc__number">4. </span><span class="eff-toc__content">Non-medical staff</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-5"><span class="eff-toc__number">5. </span><span class="eff-toc__content">Medical staff by gender and staff group</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-6"><span class="eff-toc__number">6. </span><span class="eff-toc__content">Non-medical staff by gender and staff group</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-7"><span class="eff-toc__number">7. </span><span class="eff-toc__content">Medical staff gender pay gap</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-8"><span class="eff-toc__number">8. </span><span class="eff-toc__content">Non-medical staff gender pay gap</span></a></li>
+
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-8"><span class="eff-toc__number">9. </span><span class="eff-toc__content">Methodology</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-8"><span class="eff-toc__number">10. </span><span class="eff-toc__content">Data sources</span></a></li>
+        <li class="govuk-!-font-size-16"><a class="govuk-link" href="#heading-8"><span class="eff-toc__number">11. </span><span class="eff-toc__content">Download the data</span></a></li>
+      </ol>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-5" id="heading-1">1. Overview</h2>
+
+      <p class="govuk-body">
+        The main facts and figures show that:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>across the whole NHS workforce in January 2018, Black men and women had lower average (mean) monthly basic pay than White men and women – Black men were paid 16% less than White men, and Black women were paid 7% less than White women</li>
+        <li>across the whole workforce, men and women in the Asian, Mixed and Other ethnic groups had higher average monthly pay than those in the White group; however when comparing staff in similar roles, White staff had higher average pay than those in all other ethnic groups (except among female infrastructure support staff, where Mixed ethnicity staff had the highest average pay)  </li>
+        <li>within both medical roles (doctors in hospitals and community health services) and non-medical roles, White men and women had the highest average monthly basic pay out of all ethnic groups – the ethnicity pay gap was largest for Black women in medical roles and Black men in non-medical roles, with both groups being paid 16% less than their White counterparts</li>
+        <li>men and women from the Asian, Black, Mixed and Other ethnic groups working in the 4 non-medical staff groups had lower average monthly basic pay than their White counterparts (except for women from the Mixed and Asian ethnic groups in infrastructure support roles) – the largest ethnicity pay gap was seen among managers and senior managers, where Black men earned 20% less than White men</li>
+        <li>in the NHS workforce as a whole, and in both medical and non-medical roles, women had lower average monthly basic pay than men – this pattern was seen in most ethnic groups, with the main exception being Black non-medical staff, where women were paid 3% more than men </li>
+        <li>out of the 4 non-medical staff groups, the gender pay gap was largest among managers and senior managers in the Asian ethnic group, where women were paid 11% less than men on average</li>
+        <li>in general, pay gaps between ethnic groups, and between men and women in the same ethnic group, were smaller in non-medical roles than in the medical roles</li>
+      </ul>
+
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l" id="heading-2">2. NHS staff pay by ethnicity and gender</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-summary-list--no-border eff-summary-list--small',
+        rows: [
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              text: "England"
+            }
+          },
+          {
+            key: {
+              text: "Time period"
+            },
+            value: {
+              text: "January 2018"
+            }
+          },
+          {
+            key: {
+              text: "Source"
+            },
+            value: {
+              html: "<a href=\"#\">NHS Workforce Statistics</a>"
+            }
+          }
+        ]
+      }) }}
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-9">Average (mean) monthly basic pay of all NHS staff, by ethnicity and gender</h3>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s" style="text-align: center;">Female</h3>
+      <div style="background-color: lightgrey; padding-top: 130px; padding-bottom: 130px; text-align: center;" class="govuk-body">Chart</div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      <h3 class="govuk-heading-s" style="text-align: center;">Male</h3>
+      <div style="background-color: lightgrey; padding-top: 130px; padding-bottom: 130px; text-align: center;" class="govuk-body">Chart</div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h3 class="govuk-heading-s govuk-!-margin-top-9">NHS staff average monthly basic pay per FTE and ethnicity pay gap, by gender</h3>
+
+      <div style="background-color: lightgrey; padding-top: 170px; padding-bottom: 170px; text-align: center;" class="govuk-body">Table</div>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-5">Summary</h3>
+      <p class="govuk-body">This data shows that:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>overall, in January 2018, the average (mean) monthly basic pay for NHS staff was £2,423 for women and £3,157 for men</li>
+        <li>on average, staff from the Asian ethnic group had the highest monthly basic pay for both men and women, at £3,764 for men and £2,637 for women; Black staff had the lowest monthly basic pay, at £2,551 for men and £2,242 for women</li>
+        <li>men and women in the Asian and Other ethnic groups, and men in the Mixed group, had higher basic pay on average than those in the White group</li>
+        <li>only staff in the Black ethnic group had lower monthly basic pay than White staff – Black men were paid 16% less than White men, and Black women were paid 7% less than White women      </li>
+      </ul>
+    </div>
+
+  </div>
+
+
+
+{% endblock %}

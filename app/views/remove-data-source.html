@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "input/macro.njk" import govukInput %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      },
+      {
+        text: "Workforce and business",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "/measure-linked-to-data-sources"
+      }) }}
+
+      <span class="govuk-caption-xl">Stop and search</span>
+      <h1 class="govuk-heading-xl">Remove data source</h1>
+
+
+      <form action="/measure-linked-to-data-sources">
+
+
+      <p class="govuk-body">Are you sure you want to remove <b>{{ data['data-source-title'] }}</b> as the primary source?</p>
+
+      <input type="hidden" name="data-source-title" value="" />
+
+        {{ govukButton({
+          text: "Remove",
+           classes: "govuk-button--warning"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

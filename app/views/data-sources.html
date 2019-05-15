@@ -1,0 +1,132 @@
+
+{% extends "layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "input/macro.njk" import govukInput %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "button/macro.njk" import govukButton %}
+{% from "radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      },
+      {
+        text: "Workforce and business",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "/measure-linked-to-data-sources"
+      }) }}
+
+      <span class="govuk-caption-xl">Stop and search</span>
+      <h1 class="govuk-heading-xl">Add data source</h1>
+
+
+      <form action="/data-sources" method="get">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="q">
+            Search term
+          </label>
+          <input autocomplete="off" class="govuk-input govuk-input--width-20" id="q" name="q" type="search" value="{{ data['q'] }}">
+          <button class="govuk-button govuk-button--secondary">Search</button>
+        </div>
+      </form>
+
+      <h3 class="govuk-heading-s"></h3>
+
+      <form action="/add-data-source-or-create" method="post">
+
+        {{ govukRadios({
+          idPrefix: "data-source-title",
+          name: "data-source-title",
+          fieldset: {
+            legend: {
+              text: 'Select data source'
+            }
+          },
+          items: [
+            {
+              value: "Police powers and procedures, England and Wales, year ending 31 March 2018",
+              html: "Police powers and procedures, England and Wales, year ending 31 March 2018",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                html: "Published by Home Office on 25 October 2018. National Statistics.<br><a class=\"govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular\" href=\"https://www.gov.uk/government/statistics/police-powers-and-procedures-england-and-wales-year-ending-31-march-2018\">View publication (opens in new window)</a>"
+              }
+            },
+            {
+              value: "Police powers and procedures, England and Wales, year ending 31 March 2017 second edition",
+              html: "Police powers and procedures, England and Wales, year ending 31 March 2017, second edition",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                html: "Published by Home Office on 8 November 2017. National Statistics.<br><a class=\"govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular\" href=\"https://www.gov.uk/government/statistics/police-powers-and-procedures-england-and-wales-year-ending-31-march-2017\">View publication (opens in new window)</a>"
+              }
+            },
+            {
+              value: "Police powers and procedures, England and Wales, year ending 31 March 2017",
+              html: "Police powers and procedures, England and Wales, year ending 31 March 2017",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                html: "Published by Home Office on 26 October 2017. National Statistics.<br><a class=\"govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular\" href=\"https://www.gov.uk/government/statistics/police-powers-and-procedures-england-and-wales-year-ending-31-march-2017y\">View publication (opens in new window)</a>"
+              }
+            },
+            {
+              value: "Police workforce, England and Wales: 31 March 2018",
+              html: "Police workforce, England and Wales: 31 March 2018",
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                html: "Published by Home Office on 19 July 2018. National Statistics.<br><a class=\"govuk-link govuk-link--no-visited-state govuk-!-font-weight-regular\" href=\"https://www.gov.uk/government/statistics/police-workforce-england-and-wales-31-march-2018\">View publication (opens in new window)</a>"
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "add-new",
+              text: "Add new data source",
+              label: {
+                classes: "govuk-label--s"
+              }
+            }
+          ]
+        }) }}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}
