@@ -1,0 +1,20 @@
+
+
+.govuk-button--link {
+  @include govuk-font($size: 19);
+  @include govuk-link-common;
+  display: inline;
+  border-width: 0;
+  color: $govuk-link-colour;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:focus {
+    background: none;
+  }
+}
+
+.govuk-button--link-destructive {
+  color: $govuk-error-colour;
+}

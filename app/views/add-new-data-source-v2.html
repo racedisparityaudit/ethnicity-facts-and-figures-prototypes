@@ -1,0 +1,220 @@
+
+{% extends "layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "input/macro.njk" import govukInput %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      },
+      {
+        text: "Workforce and business",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "/data-sources-v2?q=" + data['q']
+      }) }}
+
+      <span class="govuk-caption-xl">Stop and search</span>
+      <h1 class="govuk-heading-xl">Add data source</h1>
+
+
+      <form action="/measure-linked-to-data-sources-v2" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Title of data source"
+          },
+          hint: {
+            text: "For example, ‘Police powers and procedures, England and Wales, year ending 31 March 2018’"
+          },
+          id: "data-source-title",
+          name: "data-source-title"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Link to data source"
+          },
+          hint: {
+            html: "Link to a web page where the data was originally published. Don’t link directly to a spreadsheet or a PDF. <a href=\"#\">View example</a> (this will open a new page)."
+          },
+          id: "data-source-url",
+          name: "data-source-url"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Source data published by"
+          },
+          hint: {
+            text: "For example, Ministry of Justice"
+          },
+          id: "data-source-publisher",
+          name: "data-source-publisher"
+        }) }}
+
+        {% from "date-input/macro.njk" import govukDateInput %}
+
+        {{ govukDateInput({
+          id: "data-source-publication-date",
+          namePrefix: "data-source-publication-date",
+          fieldset: {
+            legend: {
+              text: "Source data publication date"
+            }
+          },
+          hint: {
+            html: "For example, 12 11 2007.<br>If you’re using a revised version of the data, give that publication date."
+          }
+        }) }}
+
+
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "data-source-publication-frequency",
+          name: "data-source-publication-frequency",
+          fieldset: {
+            legend: {
+              text: "How often is the source data published?"
+            }
+          },
+          items: [
+            {
+              text: "Monthly"
+            },
+            {
+              text: "Quarterly"
+            },
+            {
+              text: "3 times a year"
+            },
+            {
+              text: "Twice a year"
+            },
+            {
+              text: "Yearly"
+            },
+            {
+              text: "Every 2 years"
+            },
+            {
+              text: "Every 3 years"
+            },
+            {
+              text: "Every 4 years"
+            },
+            {
+              text: "Every 5 years"
+            },
+            {
+              text: "Ad-hoc"
+            },
+            {
+              text: "Other"
+            }
+          ]
+        }) }}
+
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+          {{ govukCheckboxes({
+            idPrefix: "data-source-type",
+            name: "data-source-type",
+            fieldset: {
+              legend: {
+                text: "Type of data"
+              }
+            },
+            items: [
+              {
+                text: "Administrative"
+              },
+              {
+                text: "Survey (including census data)"
+              }
+            ]
+          }) }}
+
+        {{ govukRadios({
+          idPrefix: "data-source-statistic-type",
+          name: "data-source-statistic-type",
+          fieldset: {
+            legend: {
+              text: "Type of statistic"
+            }
+          },
+          items: [
+            {
+              text: "National Statistics (certified against the Code of Practice for Statistics)"
+            },
+            {
+              text: "Official statistics (any other government statistics)"
+            },
+            {
+              text: "Experimental statistics"
+            },
+            {
+              text: "Non-official statistics (not produced by a government department or agency)"
+            }
+          ]
+        }) }}
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            name: "data-source-purpose",
+            id: "data-source-purpose",
+            label: {
+              text: "Purpose of data source"
+            },
+            hint: {
+              text: "Explain why this data’s been collected and how it will be used"
+            }
+          }) }}
+
+          {{ govukTextarea({
+            name: "data-source-corrections",
+            id: "data-source-corrections",
+            label: {
+              text: "Corrections or updates (optional)"
+            },
+            hint: {
+              text: "For example, explain if you’ve used a revised version of the data"
+            }
+          }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

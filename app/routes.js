@@ -14,4 +14,15 @@ router.post('/add-data-source-or-create', function (req, res) {
 
 })
 
+router.post('/add-data-source-or-create-v2', function (req, res) {
+  let dataSource = req.session.data['data-source-title']
+
+  if (dataSource == 'add-new') {
+    res.redirect('/add-new-data-source-v2')
+  } else {
+    res.redirect('/measure-linked-to-data-sources-v2')
+  }
+
+})
+
 module.exports = router
