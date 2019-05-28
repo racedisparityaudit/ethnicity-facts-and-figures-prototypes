@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      },
+      {
+        text: "Housing",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4  govuk-!-margin-top-2" itemprop="headline">
+      Vulnerable households going into social housing
+    </h1>
+        <p class="govuk-body">Published <time itemprop="datePublished" datetime="2019-04-17">17 April 2019</time>
+        </p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <div class="eff-factual-mistake">
+        This page contains a factual mistake. <a href="#" class="eff-factual-mistake__link">View the corrected page</a> which gives details of the mistake.
+      </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-1 govuk-!-margin-top-5">Contents</div>
+      <ol class="eff-table-of-contents">
+        <li><a class="govuk-link" href="#main-facts-and-figures" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Main facts and figures" data-event-label=""><span class="eff-table-of-contents__number">1. </span><span class="eff-table-of-contents__content">Main facts and figures</span></a></li>
+
+
+
+          <li><a class="govuk-link" href="#by-ethnicity-and-type-of-priority-need" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Dimension" data-event-label="By ethnicity and type of priority need"><span class="eff-table-of-contents__number">2. </span><span class="eff-table-of-contents__content">By ethnicity and type of priority need</span></a></li>
+
+
+
+        <li><a class="govuk-link" href="#methodology" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Methodology" data-event-label=""><span class="eff-table-of-contents__number">3. </span><span class="eff-table-of-contents__content">Methodology</span></a></li>
+        <li><a class="govuk-link" href="#data-sources" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Data sources" data-event-label=""><span class="eff-table-of-contents__number">4. </span><span class="eff-table-of-contents__content">Data sources</span></a></li>
+        <li><a class="govuk-link" href="#download-the-data" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Download the data" data-event-label=""><span class="eff-table-of-contents__number">5. </span><span class="eff-table-of-contents__content">Download the data</span></a></li>
+
+      </ol>
+    </div>
+  </div>
+{% endblock %}

@@ -13,3 +13,9 @@ $govuk-global-styles: true;
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+@import "components/details";
+@import "components/document_footer";
+@import "components/factual_corrections";
+@import "components/factual_mistake";
+@import "components/table_of_contents";

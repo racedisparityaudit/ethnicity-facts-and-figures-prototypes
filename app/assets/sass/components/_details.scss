@@ -1,0 +1,21 @@
+.eff-details--page-history .govuk-details__summary-text {
+  @include govuk-font(16);
+}
+
+.eff-details--page-history .govuk-list {
+  @include govuk-font(16);
+}
+
+.eff-details--page-history .govuk-details__text {
+  padding: 0;
+  border-left-width: 0;
+}
+
+.eff-details--page-history li {
+  margin-bottom: 10px
+}
+
+.eff-details--page-history .timestamp {
+  display: block;
+  font-weight: bold;
+}

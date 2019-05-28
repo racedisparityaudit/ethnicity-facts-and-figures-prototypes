@@ -1,0 +1,151 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      },
+      {
+        text: "Housing",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<script>
+
+  window.addEventListener('hashchange', checkForDetailsHashTarget)
+
+  document.addEventListener('DOMContentLoaded', checkForDetailsHashTarget)
+
+  function checkForDetailsHashTarget() {
+
+    var element = document.getElementById(location.hash.substring(1))
+
+    if (element && element.tagName === 'DETAILS' && 'open' in element) {
+      element.open = true
+    }
+
+  }
+
+</script>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4  govuk-!-margin-top-2" itemprop="headline">
+      Vulnerable households going into social housing
+    </h1>
+        <p class="govuk-body">Published <time itemprop="datePublished" datetime="2019-04-17">17 April 2019</time>
+        </p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <div class="eff-factual-corrections">
+        This page contains corrections to a mistake in the previous version. <a class="govuk-link" href="#full-page-history">See details</a>
+      </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-1 govuk-!-margin-top-5">Contents</div>
+      <ol class="eff-table-of-contents">
+        <li><a class="govuk-link" href="#main-facts-and-figures" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Main facts and figures" data-event-label=""><span class="eff-table-of-contents__number">1. </span><span class="eff-table-of-contents__content">Main facts and figures</span></a></li>
+
+
+
+          <li><a class="govuk-link" href="#by-ethnicity-and-type-of-priority-need" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Dimension" data-event-label="By ethnicity and type of priority need"><span class="eff-table-of-contents__number">2. </span><span class="eff-table-of-contents__content">By ethnicity and type of priority need</span></a></li>
+
+
+
+        <li><a class="govuk-link" href="#methodology" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Methodology" data-event-label=""><span class="eff-table-of-contents__number">3. </span><span class="eff-table-of-contents__content">Methodology</span></a></li>
+        <li><a class="govuk-link" href="#data-sources" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Data sources" data-event-label=""><span class="eff-table-of-contents__number">4. </span><span class="eff-table-of-contents__content">Data sources</span></a></li>
+        <li><a class="govuk-link" href="#download-the-data" data-on="click" data-event-category="Table of contents link clicked" data-event-action="Download the data" data-event-label=""><span class="eff-table-of-contents__number">5. </span><span class="eff-table-of-contents__content">Download the data</span></a></li>
+
+
+        <div class="govuk-body" style="margin-top: 80px; margin-bottom: 80px;">[..]</div>
+
+<div class="eff-document-footer">
+
+        <div class="history-information" id="history">
+
+            <p>
+                Publication release date:
+                <span class="published definition">
+                        17 April 2019
+                </span>
+            </p>
+
+                <p>Updated:
+                    <span class="updated definition"> 17 May 2019</span>
+                </p>
+
+          <div class="change-notes">
+
+
+              <details id="full-page-history" class="govuk-details eff-details--page-history" data-event-action="Closed" data-event-category="Disclosure" data-event-label="Full page history" data-on="click" role="group">
+  <summary class="govuk-details__summary" role="button" aria-controls="details-content-383536a7-87f6-4eaf-883b-a543e1516c17" aria-expanded="true">
+    <span class="govuk-details__summary-text">
+      full page history
+    </span>
+  </summary>
+  <div class="govuk-details__text" id="details-content-383536a7-87f6-4eaf-883b-a543e1516c17" aria-hidden="false">
+                  <ol class="govuk-list">
+                <li>
+                    <time datetime="2019-05-17" class="timestamp">17 May 2019</time>
+                    Added the date range that the data covers (2017/18) to the first bullet point in 'Main facts and figures’.
+                </li>
+                  <li>
+                    <time datetime="2019-05-14" class="timestamp">14 May 2019</time>
+
+                      Some headings have been changed. No data or commentary has been updated.
+                  </li>
+                  <li>
+                    <time datetime="2019-04-17" class="timestamp">17 April 2019</time>
+
+                      Updated with the latest available data.
+                  </li>
+              </ol>
+
+  </div>
+</details>
+
+
+          </div>
+        </div>
+        <div class="related-information">
+            <p>
+            From:
+            <span class="definition">Ministry of Housing, Communities and Local Government</span>
+          </p>
+
+
+            <div class="previous-editions">
+              Previous editions:
+
+              <ol class="govuk-list">
+                    <li>
+                        <a class="govuk-link" href="/housing/social-housing/vulnerable-households-living-in-social-housing/2.0">15 August 2018</a>
+                    </li>
+                    <li>
+                        <a class="govuk-link" href="/housing/social-housing/vulnerable-households-living-in-social-housing/1.2">2 March 2018</a>
+                    </li>
+              </ol>
+            </div>
+
+        </div>
+
+      </div>
+
+      </ol>
+    </div>
+  </div>
+{% endblock %}
