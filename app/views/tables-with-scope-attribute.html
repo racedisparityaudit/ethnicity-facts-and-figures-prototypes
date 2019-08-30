@@ -1,0 +1,112 @@
+
+{% extends "layout.html" %}
+
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Ethnicity facts and figures",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">Table using scope attributes</h1>
+
+<p class="govuk-body">This table uses <code>scope</code> attributes on the header cells to specify the first row as relating to the column groups and the second row to the individual columns.</p>
+
+
+<table class="govuk-table eff-table--dense">
+  <caption class="govuk-table__caption">
+Length of tenancy for new fixed-term lettings in social housing by ethnicity</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" rowspan="2" class="govuk-table__header app-custom-class">Ethnicity</th>
+      <th scope="colgroup" colspan="2" class="govuk-table__header app-custom-class">2 years or less</th>
+      <th scope="colgroup" colspan="2" class="govuk-table__header app-custom-class">3 to 5 years</th>
+      <th scope="colgroup" colspan="2" class="govuk-table__header app-custom-class">6 to 9 years</th>
+      <th scope="colgroup" colspan="2" class="govuk-table__header app-custom-class">10 or more years</th>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">%</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Number</th>
+      <th scope="col" class="govuk-table__header app-custom-class">%</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Number</th>
+      <th scope="col" class="govuk-table__header app-custom-class">%</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Number</th>
+      <th scope="col" class="govuk-table__header app-custom-class">%</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Number</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Asian</th>
+      <td class="govuk-table__cell">20.3</td>
+      <td class="govuk-table__cell">536</td>
+      <td class="govuk-table__cell">66.8</td>
+      <td class="govuk-table__cell">1,767</td>
+      <td class="govuk-table__cell">11.3</td>
+      <td class="govuk-table__cell">299</td>
+      <td class="govuk-table__cell">1.7</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Black</th>
+      <td class="govuk-table__cell">20.3</td>
+      <td class="govuk-table__cell">536</td>
+      <td class="govuk-table__cell">66.8</td>
+      <td class="govuk-table__cell">1,767</td>
+      <td class="govuk-table__cell">11.3</td>
+      <td class="govuk-table__cell">299</td>
+      <td class="govuk-table__cell">1.7</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Mixed</th>
+      <td class="govuk-table__cell">20.3</td>
+      <td class="govuk-table__cell">536</td>
+      <td class="govuk-table__cell">66.8</td>
+      <td class="govuk-table__cell">1,767</td>
+      <td class="govuk-table__cell">11.3</td>
+      <td class="govuk-table__cell">299</td>
+      <td class="govuk-table__cell">1.7</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">White</th>
+      <td class="govuk-table__cell">20.3</td>
+      <td class="govuk-table__cell">536</td>
+      <td class="govuk-table__cell">66.8</td>
+      <td class="govuk-table__cell">1,767</td>
+      <td class="govuk-table__cell">11.3</td>
+      <td class="govuk-table__cell">299</td>
+      <td class="govuk-table__cell">1.7</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Other</th>
+      <td class="govuk-table__cell">20.3</td>
+      <td class="govuk-table__cell">536</td>
+      <td class="govuk-table__cell">66.8</td>
+      <td class="govuk-table__cell">1,767</td>
+      <td class="govuk-table__cell">11.3</td>
+      <td class="govuk-table__cell">299</td>
+      <td class="govuk-table__cell">1.7</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

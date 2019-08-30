@@ -1,0 +1,6 @@
+.eff-table--dense th,
+.eff-table--dense td,
+.eff-table__header--dense,
+.eff-table__cell--dense {
+  @include govuk-typography-responsive(16);
+}
